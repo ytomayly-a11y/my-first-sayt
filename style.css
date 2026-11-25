@@ -4,130 +4,160 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f4f6f8;
-  color: #222;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.topbar {
-  background-color: #111827;
-  color: #fff;
-  padding: 16px 0;
-  position: sticky;
-  top: 0;
-}
-
-.topbar-inner {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.logo {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.nav {
-  display: flex;
-  gap: 20px;
-}
-
-.nav a {
-  color: #d1d5db;
-  text-decoration: none;
-}
-
-.nav a:hover {
-  color: #fff;
-}
-
-.hero {
-  padding: 48px 0 32px;
-}
-
-.hero h1 {
-  margin-bottom: 12px;
-}
-
-.hero p {
-  margin-bottom: 16px;
-}
-
-.section {
-  padding: 32px 0;
-}
-
-.section h2 {
-  margin-bottom: 16px;
-}
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 16px;
+  justify-content: center;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+  padding: 20px;
+  overflow: hidden;
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: #ffffff;
+  width: 100%;
+  max-width: 440px;
+  border-radius: 24px;
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-.card h3 {
+.step {
+  display: none;
+  animation: fadeIn 0.35s ease;
+}
+
+.step.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.emoji {
+  font-size: 54px;
+  margin-bottom: 12px;
+}
+
+h1, h2 {
+  color: #1f2937;
   margin-bottom: 8px;
+  font-size: 24px;
 }
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-width: 500px;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-family: inherit;
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 24px;
   font-size: 15px;
 }
 
-button {
-  background-color: #2563eb;
-  color: #fff;
+.buttons-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  min-height: 60px;
+}
+
+.btn {
   border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
-  font-size: 16px;
+  border-radius: 14px;
+  padding: 14px 28px;
+  font-size: 17px;
+  font-weight: 600;
   cursor: pointer;
-  width: fit-content;
+  transition: transform 0.15s ease, background-color 0.2s ease;
 }
 
-button:hover {
-  background-color: #1d4ed8;
+.btn-yes {
+  background-color: #ec4899;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(236, 72, 153, 0.35);
 }
 
-#message,
-#formStatus {
-  margin-top: 12px;
-  font-weight: bold;
+.btn-yes:hover {
+  background-color: #db2777;
+  transform: scale(1.04);
+}
+
+.btn-no {
+  background-color: #e5e7eb;
+  color: #374151;
+  transition: left 0.2s ease, top 0.2s ease;
+}
+
+.inputs-group {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+input[type="date"],
+input[type="time"],
+.custom-input {
+  padding: 12px 14px;
+  border: 2px solid #f3f4f6;
+  border-radius: 12px;
+  font-size: 16px;
+  font-family: inherit;
+  color: #1f2937;
+  outline: none;
+}
+
+input:focus {
+  border-color: #ec4899;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.option-btn {
+  background: #fdf2f8;
+  border: 2px solid #fbcfe8;
+  color: #831843;
+  border-radius: 12px;
+  padding: 12px 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.option-btn.selected {
+  background: #ec4899;
+  border-color: #ec4899;
+  color: #ffffff;
+}
+
+.custom-input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.summary-box {
+  background: #fdf2f8;
+  border-radius: 16px;
+  padding: 18px;
+  margin: 18px 0 22px;
+  color: #1f2937;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.copy-hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #16a34a;
+  font-weight: 600;
 }

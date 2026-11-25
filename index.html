@@ -3,57 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Мой первый сайт</title>
+  <title>Важный вопрос ❤️</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <a href="#top" class="logo">МойСайт</a>
-      <nav class="nav">
-        <a href="#about">О проекте</a>
-        <a href="#cards">Карточки</a>
-        <a href="#contact">Связь</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="top" class="container">
-    <section id="about" class="hero">
-      <h1>Привет, это мой сайт</h1>
-      <p>Теперь здесь есть меню, карточки и форма обратной связи.</p>
-      <button id="actionBtn">Нажми меня</button>
-      <p id="message"></p>
-    </section>
-
-    <section id="cards" class="section">
-      <h2>Мои разделы</h2>
-      <div class="cards-grid">
-        <article class="card">
-          <h3>Карточка 1</h3>
-          <p>Короткое описание первой темы, навыка или идеи.</p>
-        </article>
-        <article class="card">
-          <h3>Карточка 2</h3>
-          <p>Здесь можно разместить информацию о проекте или услуге.</p>
-        </article>
-        <article class="card">
-          <h3>Карточка 3</h3>
-          <p>Сетка автоматически подстраивается под ширину экрана.</p>
-        </article>
+  <div class="card" id="appCard">
+    <!-- Шаг 1: Главный вопрос -->
+    <div class="step active" id="step1">
+      <div class="emoji">💌</div>
+      <h1>Пойдёшь со мной на свидание?</h1>
+      <p class="subtitle">Обещаю, будет круто!</p>
+      <div class="buttons-area">
+        <button class="btn btn-yes" id="yesBtn">Да ❤️</button>
+        <button class="btn btn-no" id="noBtn">Нет</button>
       </div>
-    </section>
+    </div>
 
-    <section id="contact" class="section">
-      <h2>Написать сообщение</h2>
-      <form id="contactForm" class="contact-form">
-        <input type="text" id="nameInput" placeholder="Ваше имя" required>
-        <textarea id="textInput" rows="4" placeholder="Ваше сообщение..." required></textarea>
-        <button type="submit">Отправить</button>
-      </form>
-      <p id="formStatus"></p>
-    </section>
-  </main>
+    <!-- Шаг 2: Выбор времени -->
+    <div class="step" id="step2">
+      <div class="emoji">⏰</div>
+      <h2>Ура! Когда тебе удобно?</h2>
+      <p class="subtitle">Выбери день и время</p>
+      <div class="inputs-group">
+        <input type="date" id="dateInput">
+        <input type="time" id="timeInput" value="19:00">
+      </div>
+      <button class="btn btn-yes" id="toStep3Btn">Дальше →</button>
+    </div>
+
+    <!-- Шаг 3: Выбор занятия -->
+    <div class="step" id="step3">
+      <div class="emoji">✨</div>
+      <h2>Что будем делать?</h2>
+      <p class="subtitle">Можно выбрать один или несколько вариантов</p>
+      <div class="options-grid" id="optionsGrid">
+        <button type="button" class="option-btn" data-value="🎬 Кино">🎬 Кино</button>
+        <button type="button" class="option-btn" data-value="🚗 Покататься">🚗 Покататься</button>
+        <button type="button" class="option-btn" data-value="🍕 Покушать">🍕 Покушать</button>
+        <button type="button" class="option-btn" data-value="🚶‍♂️ Погулять">🚶‍♂️ Погулять</button>
+        <button type="button" class="option-btn" data-value="🔥 Секс">🔥 Секс</button>
+        <button type="button" class="option-btn" data-value="🎁 Сюрприз">🎁 Сюрприз</button>
+      </div>
+      <input type="text" id="customOption" class="custom-input" placeholder="Или напиши свой вариант...">
+      <button class="btn btn-yes" id="finishBtn">Готово ❤️</button>
+    </div>
+
+    <!-- Шаг 4: Финал -->
+    <div class="step" id="step4">
+      <div class="emoji">🥰</div>
+      <h2>Договорились!</h2>
+      <div class="summary-box" id="summaryText"></div>
+      <button class="btn btn-yes" id="copyBtn">📋 Скопировать и отправить</button>
+      <p class="copy-hint" id="copyHint"></p>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
